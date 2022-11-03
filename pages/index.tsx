@@ -17,7 +17,7 @@ const Home = () => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get going by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
