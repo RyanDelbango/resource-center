@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+.card-title, .card-subtitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
