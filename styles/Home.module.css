@@ -127,3 +127,19 @@
     filter: invert(1);
   }
 }
+
+.cards {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+
+.question {
+  margin: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
+import MaterialCard from '../components/cards/MaterialCard';
 
 const Home = () => {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,14 +13,14 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="card-body">
-        <h1  className="card-title">
-          Welcome to Material Center
+      <div className={styles.cards}>
+        <h1 className={styles.question}>
+          Which will you coose?
         </h1>
-        <h6 className="card-subtitle mb-2 text-muted">
-          <Link href="/users/user">Do not click</Link>
-        </h6>
+        <MaterialCard material='Earth' />
+        <MaterialCard material='Water' />
+        <MaterialCard material='Wind' />
+        <MaterialCard material='Fire' />
       </div>
     </div>
   )
