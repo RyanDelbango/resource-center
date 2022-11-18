@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import NavBar from '../components/nav/Nav';
-import MaterialCard from '../components/cards/MaterialCard';
+import NavBar from '../components/Nav';
+import MaterialCard from '../components/MaterialCard';
 
 const Home = () => {
 

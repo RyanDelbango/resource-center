@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/globals.css'
-import Layout from '../components/layout/layout'
+import Layout from '../components/layout'
 import type { AppProps } from 'next/app'
 
 const App = ({ Component, pageProps }: AppProps) => {
