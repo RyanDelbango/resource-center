@@ -15,12 +15,12 @@ const Home = () => {
       </Head>
       <div className={styles.cards}>
         <h1 className={styles.question}>
-          Please take one.
+          You have gained a level. Choose a stat to increase.
         </h1>
-        <MaterialCard material='Earth' />
-        <MaterialCard material='Water' />
-        <MaterialCard material='Wind' />
-        <MaterialCard material='Fire' />
+        <MaterialCard material='Attack' />
+        <MaterialCard material='Defense' />
+        <MaterialCard material='Mana' />
+        <MaterialCard material='Speed' />
       </div>
     </div>
   )
