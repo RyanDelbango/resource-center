@@ -42,3 +42,10 @@ a {
   padding: 12px 36px;
   background-color: antiquewhite;
 }
+
+.card-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 24px;
+}
