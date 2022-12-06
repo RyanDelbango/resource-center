@@ -5,8 +5,6 @@ const Login = () => {
     const authenticated = useSelector(selectAuth)
     const dispatch = useDispatch()
 
-    console.log(authenticated, auth());
-
     return (
         <div className="card-body">
             <h1 className="card-title">
