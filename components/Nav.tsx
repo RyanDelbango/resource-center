@@ -3,7 +3,7 @@ import Link from 'next/link';
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand navbar-light">
-            <Link className="navbar-brand" href="#">Home</Link>
+            <Link className="navbar-brand" href="/">Home</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
