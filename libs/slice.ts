@@ -11,8 +11,8 @@ export const authSlice = createSlice({
       state.value = !state.value;
     },
   }
-})
+});
 
-export const { auth } = authSlice.actions
-export const selectAuth = (state: RootState) => state.authenticated.value
-export const authReducer =  authSlice.reducer
+export const { auth } = authSlice.actions;
+export const selectAuth = (state: RootState) => state.authenticated.value;
+export const authReducer =  authSlice.reducer;
