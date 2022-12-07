@@ -49,3 +49,8 @@ a {
   justify-content: center;
   margin-top: 24px;
 }
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,6 +1,10 @@
 import Link from 'next/link';
+import { useSelector } from 'react-redux'
+import { selectAuth } from '../libs/slice';
 
 const NavBar = () => {
+    const authenticated = useSelector(selectAuth);
+
     return (
         <nav className="navbar navbar-expand navbar-light">
             <Link className="navbar-brand" href="/">Home</Link>
@@ -11,6 +15,11 @@ const NavBar = () => {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link className="nav-link" href="/users/user">Inventory</Link>
+                    </li>
+                </ul>
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <Link className="nav-link" href="/auth/login">{authenticated ? 'Log out' : 'Login'}</Link>
                     </li>
                 </ul>
             </div>
