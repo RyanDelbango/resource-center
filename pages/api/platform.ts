@@ -5,11 +5,11 @@ type Data = {
   name: string
 }
 
-const handler = (
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) => {
-  res.status(200).json({ name: 'platform' })
+  await res.status(200).json({ name: 'platform' })
 }
 
 export default handler;
