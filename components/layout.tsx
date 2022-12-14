@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux'
 import { selectAuth } from '../libs/slice';
 
 interface LayoutProps {
-    children: ReactNode,
+  children: ReactNode,
 }
 
 const Layout = ({ children }: LayoutProps) => {
   const authenticated = useSelector(selectAuth);
+  const path = window.location.pathname;
 
   useEffect(() => {
-    if (!authenticated && window.location.pathname !== '/auth/login') {
+    if (!authenticated && path !== '/auth/login') {
       Router.push('/auth/login')
     }
   }, [window.location.pathname]);
@@ -20,7 +21,9 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       {authenticated ? <NavBar /> : <></>}
-      <main>{children}</main>
+      <main>
+        {authenticated || path === '/auth/login' ? children : <></>}
+      </main>
     </>
   )
 }
