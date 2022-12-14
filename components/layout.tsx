@@ -1,7 +1,8 @@
-import { ReactNode, useEffect } from "react"
-import Router from 'next/router'
-import NavBar from "./Nav"
-import { useSelector } from 'react-redux'
+import React from "react";
+import { ReactNode, useEffect } from "react";
+import Router from 'next/router';
+import NavBar from "./Nav";
+import { useSelector } from 'react-redux';
 import { selectAuth } from '../libs/slice';
 
 interface LayoutProps {
@@ -14,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   useEffect(() => {
     if (!authenticated && path !== '/auth/login') {
-      Router.push('/auth/login')
+      Router.push('/auth/login');
     }
   }, [window.location.pathname]);
 
@@ -25,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
         {authenticated || path === '/auth/login' ? children : <></>}
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

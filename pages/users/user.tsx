@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 
 const user = (
@@ -9,10 +10,10 @@ const user = (
             <Link href="/">Beware</Link>
         </h6>
     </div>
-)
+);
 
 const FirstUser = () => {
     return user;
-}
+};
 
 export default FirstUser;

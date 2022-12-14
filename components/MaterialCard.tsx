@@ -1,8 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 
 interface MaterialCardProps {
     material: string,
-};
+}
 
 const MaterialCard = ({material}: MaterialCardProps) => {
   return (
@@ -11,7 +12,7 @@ const MaterialCard = ({material}: MaterialCardProps) => {
         <Link href="/users/user">{material}</Link>
       </h1>
     </div>
-  )
-}
+  );
+};
 
 export default MaterialCard;

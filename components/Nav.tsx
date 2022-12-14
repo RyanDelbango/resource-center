@@ -1,5 +1,6 @@
+import React from 'react';
 import Link from 'next/link';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { selectAuth } from '../libs/slice';
 
 const NavBar = () => {
@@ -24,7 +25,7 @@ const NavBar = () => {
                 </ul>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavBar;

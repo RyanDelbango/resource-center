@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from 'react';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 import MaterialCard from '../components/MaterialCard';
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
         <MaterialCard material='Speed' />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Home;

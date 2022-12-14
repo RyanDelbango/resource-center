@@ -1,7 +1,7 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import { authReducer } from './slice';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
 const createNoopStorage = () => {
@@ -9,7 +9,7 @@ const createNoopStorage = () => {
     getItem(_key: string) {
       return Promise.resolve(null);
     },
-    setItem(_key: string, value: string|Number|boolean) {
+    setItem(_key: string, value: string|number|boolean) {
       return Promise.resolve(value);
     },
     removeItem(_key: string) {
