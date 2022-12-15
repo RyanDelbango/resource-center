@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { ReactNode, useEffect } from "react";
 import Router from 'next/router';
 import { useSelector } from 'react-redux';
@@ -9,8 +9,9 @@ interface LayoutProps {
   children: ReactNode,
 }
 
-const DynamicNav = dynamic(() => import('components/Nav'), {
-  suspense: true,
+const DynamicNav = dynamic(async () => {
+  const Nav = await import('components/Nav');
+  return Nav;
 });
 
 const Layout = ({ children }: LayoutProps) => {
@@ -25,11 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      {authenticated ? 
-      <Suspense>
-        <DynamicNav />
-      </Suspense> : 
-      <></>}
+      {authenticated ? <DynamicNav /> : <></>}
       <main>
         {authenticated || path === '/auth/login' ? children : <></>}
       </main>
