@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { auth, selectAuth } from '../../libs/slice';
+import { auth, selectAuth } from 'libs/slice';
 
 const Login = () => {
     const authenticated = useSelector(selectAuth);

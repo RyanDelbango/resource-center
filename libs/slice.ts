@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../types/redux';
+import { RootState } from 'types/redux';
 
 export const authSlice = createSlice({
   name: 'auth',

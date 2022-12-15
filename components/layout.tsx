@@ -1,9 +1,9 @@
 import React from "react";
 import { ReactNode, useEffect } from "react";
 import Router from 'next/router';
-import NavBar from "./Nav";
+import NavBar from "components/Nav";
 import { useSelector } from 'react-redux';
-import { selectAuth } from '../libs/slice';
+import { selectAuth } from 'libs/slice';
 
 interface LayoutProps {
   children: ReactNode,

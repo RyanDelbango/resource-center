@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
-import { authReducer } from './slice';
+import { authReducer } from 'libs/slice';
 import thunk from 'redux-thunk';
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
