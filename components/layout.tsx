@@ -1,13 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ReactNode, useEffect } from "react";
 import Router from 'next/router';
-import NavBar from "components/Nav";
 import { useSelector } from 'react-redux';
 import { selectAuth } from 'libs/slice';
+import dynamic from 'next/dynamic';
 
 interface LayoutProps {
   children: ReactNode,
 }
+
+const DynamicNav = dynamic(() => import('components/Nav'), {
+  suspense: true,
+});
 
 const Layout = ({ children }: LayoutProps) => {
   const authenticated = useSelector(selectAuth);
@@ -21,7 +25,11 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      {authenticated ? <NavBar /> : <></>}
+      {authenticated ? 
+      <Suspense>
+        <DynamicNav />
+      </Suspense> : 
+      <></>}
       <main>
         {authenticated || path === '/auth/login' ? children : <></>}
       </main>
