@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 interface ClassComponentState {
-  status?: string,
+  location?: string,
   color: string,
   planet?: string,
   nums?: Array<number>,
@@ -11,7 +11,7 @@ interface ClassComponentState {
 class ClassComponent extends React.Component<ClassComponentState, ClassComponentState> {
   constructor(props: ClassComponentState) {
     super(props);
-    this.state = { status: "Loading", color: "blue", planet: "Earth", nums: [3,1,2,5,6]  };
+    this.state = { location: "Loading", color: "blue", planet: "Earth", nums: [3,1,2,5,6]  };
   }
   changeColor = () => {
     this.setState({ color: this.state.color !== this.props.color ? this.props.color : "blue" });
@@ -26,17 +26,16 @@ class ClassComponent extends React.Component<ClassComponentState, ClassComponent
       };
       const response = await axios.get(`https://swapi.dev/api/planets/3/`, {params});
       const { name } = await response.data;
-      const statusRes = await axios.get(`http://localhost:8000/`);
-      const { status } = statusRes.data;
-
-      this.setState({ status, planet: name });
+      const locationRes = await axios.get(`http://localhost:8000/`, {params});
+      const { location } = locationRes.data;
+      this.setState({ location, planet: name });
     } catch(e) {
       alert(e);
     }
 
   }
   componentDidUpdate() {
-    console.log(this.state);
+    // console.log(this.state);
   }
   render() {
     return (
@@ -49,7 +48,7 @@ class ClassComponent extends React.Component<ClassComponentState, ClassComponent
           >
             Change color
           </button>
-          <h2 style={{ margin: 24 }}>Status is: {this.state.status}</h2>
+          <h2 style={{ margin: 24 }}>Fetching from: {this.state.location}</h2>
           <h2 style={{ margin: 24 }}>I am a {this.state.color} Car!</h2>
           <h2 style={{ margin: 24 }}>I am on planet {this.state.planet}</h2>
         </div><div style={{ width: '100%', display: "flex", justifyContent: 'center', padding: 24 }}>
